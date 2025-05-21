@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 
-# Configuración inicial
+# Configuración de página
 st.set_page_config(page_title="Evo-Devo", layout="wide", page_icon="🧬")
 
 st.title("🧬 Evo-Devo: Biología Evolutiva del Desarrollo")
@@ -17,17 +17,35 @@ st.markdown("""
 1. Carroll, S.B. (2005). *Endless Forms Most Beautiful*. W.W. Norton & Company.
 2. Gilbert, S.F. (2014). *Developmental Biology* (10th ed.). Sinauer Associates.
 3. Hall, B.K. (1992). *Evolutionary Developmental Biology*. Springer.
-
 """)
 
-# Imágenes
-st.image("https://upload.wikimedia.org/wikipedia/commons/0/02/Hox_gene_expression_patterns.png", caption="Genes Hox y su expresión en diferentes organismos", use_column_width=True)
+# Imagen ilustrativa
+st.image(
+    "https://upload.wikimedia.org/wikipedia/commons/0/02/Hox_gene_expression_patterns.png",
+    caption="Genes Hox y su expresión en diferentes organismos",
+    use_container_width=True
+)
 
-# Video
-st.video("https://www.youtube.com/watch?v=MQqyjO5G8v0")
+# Sección multimedia con pestañas
+st.header("🎬 Recursos Multimedia sobre Evo-Devo")
+
+tab1, tab2, tab3 = st.tabs(["📘 Introducción", "🌍 Documental", "🌀 Animación"])
+
+with tab1:
+    st.subheader("📘 ¿Qué es la biología evolutiva del desarrollo?")
+    st.video("https://www.youtube.com/watch?v=5MfSYnItYvg")
+
+with tab2:
+    st.subheader("🌍 Documental educativo (Evo-Devo)")
+    st.video("https://www.youtube.com/watch?v=DRBfdUjY9hE")  # Documental corto (Stated Clearly)
+
+with tab3:
+    st.subheader("🌀 Animación: Cambios en el desarrollo")
+    st.video("https://www.youtube.com/watch?v=fdSBPpT3bBQ")  # Animación de desarrollo embriológico
 
 # Cuestionario
 st.header("📝 Cuestionario Evo-Devo")
+
 questions = [
     {
         "question": "¿Qué son los genes Hox?",
@@ -137,7 +155,7 @@ score = 0
 with st.form("quiz_form"):
     for idx, q in enumerate(questions):
         st.subheader(f"Pregunta {idx + 1}: {q['question']}")
-        user_answers.append(st.radio(f"Selecciona una respuesta:", q["options"], key=idx))
+        user_answers.append(st.radio("Selecciona una respuesta:", q["options"], key=idx))
     submitted = st.form_submit_button("Enviar respuestas")
 
     if submitted:
@@ -153,8 +171,7 @@ with st.form("quiz_form"):
             st.markdown("#### Celebración con TARDIS 🚀")
             tardis_url = "https://upload.wikimedia.org/wikipedia/commons/4/4e/TARDIS_Prop.jpg"
             cols = st.columns(5)
-            for _ in range(3):
+            for _ in range(3):  # mostrar múltiples filas de TARDIS
                 for col in cols:
                     with col:
                         st.image(tardis_url, width=80)
-

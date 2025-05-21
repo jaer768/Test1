@@ -1,64 +1,176 @@
 import streamlit as st
 
-st.set_page_config(page_title="Aprende Python", page_icon="🐍")
-st.title("🐍 Aprende Python: while, for, if")
+# Configuración de página
+st.set_page_config(page_title="Evo-Devo", layout="wide", page_icon="🧬")
+
+st.title("🧬 Evo-Devo: Biología Evolutiva del Desarrollo")
 st.markdown("""
-## 🧠 Introducción
+**Evo-Devo**, o Biología Evolutiva del Desarrollo, es un campo que estudia cómo los cambios en el desarrollo de los organismos contribuyen a la evolución de nuevas formas y estructuras. Combina conocimientos de genética, embriología, paleontología y biología molecular para entender cómo la evolución moldea el desarrollo.
 
-Esta página te enseñará cómo funcionan las estructuras básicas de control en Python: `while`, `for`, e `if`.
+### 🧠 ¿Por qué es importante?
+- Ayuda a explicar cómo surgen nuevas características morfológicas.
+- Relaciona genes del desarrollo con la evolución de las especies.
+- Revela similitudes ocultas entre organismos diferentes.
 
----
-
-### 🔁 Bucle While
-El bucle `while` ejecuta un bloque de código **mientras** una condición sea verdadera.
-
-```python
-i = 0
-while i < 5:
-    print(i)
-    i += 1
-🔂 Bucle For
-Se usa para recorrer elementos de una secuencia como listas, rangos, strings, etc.
-
-for i in range(5):
-    print(i)
-🔀 Condicional If
-Se usa para ejecutar código dependiendo del resultado de una condición.
-
-x = 10
-if x > 5:
-    print("x es mayor que 5")
+### 📚 Referencias científicas
+1. Carroll, S.B. (2005). *Endless Forms Most Beautiful*. W.W. Norton & Company.
+2. Gilbert, S.F. (2014). *Developmental Biology* (10th ed.). Sinauer Associates.
+3. Hall, B.K. (1992). *Evolutionary Developmental Biology*. Springer.
 """)
 
-st.header("📝 Quiz: Evalúa lo que aprendiste")
+# Imagen ilustrativa corregida
+st.image(
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Hox_gene_expression_patterns_mouse.jpg/800px-Hox_gene_expression_patterns_mouse.jpg",
+    caption="Expresión de genes Hox en el embrión del ratón",
+    use_container_width=True
+)
+
+# Sección multimedia con pestañas y videos funcionales
+st.header("🎬 Recursos Multimedia sobre Evo-Devo")
+
+tab1, tab2, tab3 = st.tabs(["📘 Introducción", "🌍 Documental", "🌀 Animación"])
+
+with tab1:
+    st.subheader("📘 ¿Qué es la biología evolutiva del desarrollo?")
+    st.video("https://www.youtube.com/watch?v=5MfSYnItYvg")
+
+with tab2:
+    st.subheader("🌍 Documental educativo")
+    st.video("https://www.youtube.com/watch?v=1Fi3bqxmB4Y")
+
+with tab3:
+    st.subheader("🌀 Animación sobre desarrollo embrionario")
+    st.video("https://www.youtube.com/watch?v=DoSRu15NINE")
+
+# Cuestionario
+st.header("📝 Cuestionario Evo-Devo")
 
 questions = [
-{"question": "¿Qué hace un bucle while?", "options": ["Repite mientras la condición es verdadera", "Solo una vez", "Compara valores"], "answer": 0},
-{"question": "¿Qué palabra se usa para condicionales?", "options": ["if", "loop", "while"], "answer": 0},
-{"question": "¿Qué hace el bucle for?", "options": ["Repite sobre una secuencia", "Solo repite una vez", "Compara dos valores"], "answer": 0},
-{"question": "¿Qué hace este código?\n\nx = 5\nif x > 3:\n print('Mayor')", "options": ["Imprime 'Mayor'", "Error", "Nada"], "answer": 0},
-{"question": "¿Cuál es el resultado?\n\nfor i in range(3):\n print(i)", "options": ["0 1 2", "1 2 3", "3 2 1"], "answer": 0},
-{"question": "¿Qué operador compara igualdad?", "options": ["==", "=", "!="], "answer": 0},
-{"question": "¿Qué ocurre si while nunca se vuelve falso?", "options": ["Bucle infinito", "Error", "Nada"], "answer": 0},
-{"question": "¿Qué hace 'if x == y'?", "options": ["Compara si x es igual a y", "Asigna y a x", "Termina el código"], "answer": 0},
-{"question": "¿Qué palabra detiene un bucle?", "options": ["break", "stop", "exit"], "answer": 0},
-{"question": "¿Qué hace este código?\n\ni = 0\nwhile i < 3:\n print(i)\n i += 1", "options": ["Imprime 0 1 2", "Imprime 1 2 3", "Nada"], "answer": 0}
+    {
+        "question": "¿Qué son los genes Hox?",
+        "options": [
+            "Genes que regulan el metabolismo celular",
+            "Genes involucrados en la formación de órganos sexuales",
+            "Genes que determinan la identidad de los segmentos corporales",
+            "Genes responsables del sistema inmunológico"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "¿Qué disciplina integra Evo-Devo?",
+        "options": [
+            "Embriología y genética",
+            "Geología y astronomía",
+            "Física cuántica",
+            "Química orgánica"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "¿Cuál es un concepto clave en Evo-Devo?",
+        "options": [
+            "La ley de Hardy-Weinberg",
+            "La selección artificial",
+            "La modularidad del desarrollo",
+            "La mecánica cuántica"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "¿Qué papel juegan los genes reguladores?",
+        "options": [
+            "Controlan la expresión de otros genes durante el desarrollo",
+            "Producen energía celular",
+            "Intervienen en la digestión",
+            "No tienen ninguna función conocida"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "¿Qué animal ha sido un modelo común en estudios Evo-Devo?",
+        "options": [
+            "Perro",
+            "Ser humano",
+            "Mosca de la fruta (Drosophila)",
+            "Elefante"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "¿Qué sugiere la conservación de genes del desarrollo entre especies?",
+        "options": [
+            "Las especies no están relacionadas",
+            "La evolución no ocurre",
+            "Hay un ancestro común",
+            "Los genes del desarrollo no son importantes"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "¿Qué indica un cambio en la expresión espacial de un gen Hox?",
+        "options": [
+            "Cambio en el color de ojos",
+            "Alteración en la forma corporal",
+            "Incremento de velocidad metabólica",
+            "Mejora de la audición"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "¿Cuál es un descubrimiento importante de Evo-Devo?",
+        "options": [
+            "Los agujeros negros",
+            "La tectónica de placas",
+            "Los genes homeóticos",
+            "La fotosíntesis"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "¿Qué término describe la aparición repetida de estructuras similares?",
+        "options": [
+            "Convergencia evolutiva",
+            "Deriva genética",
+            "Pérdida adaptativa",
+            "Especiación alopátrica"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "¿Qué muestra la heterocronía en Evo-Devo?",
+        "options": [
+            "Cambios en el tiempo del desarrollo",
+            "Cambios en la temperatura",
+            "Cambios hormonales en adultos",
+            "Cambios en el ciclo del agua"
+        ],
+        "answer": 0
+    }
 ]
 
 user_answers = []
-
-for i, q in enumerate(questions):
-st.subheader(f"Pregunta {i+1}")
-st.write(q["question"])
-selected = st.radio("Selecciona una opción:", q["options"], key=f"q{i}")
-user_answers.append(q["options"].index(selected))
-
-if st.button("📊 Calcular puntaje"):
 score = 0
-for i, q in enumerate(questions):
-if user_answers[i] == q["answer"]:
-score += 1
-st.success(f"Tu puntaje es: {score}/10")
-if score == 10:
-st.balloons()
-st.markdown("🎉 ¡Felicidades! ¡Obtuviste el puntaje perfecto!")
+
+with st.form("quiz_form"):
+    for idx, q in enumerate(questions):
+        st.subheader(f"Pregunta {idx + 1}: {q['question']}")
+        user_answers.append(st.radio("Selecciona una respuesta:", q["options"], key=idx))
+    submitted = st.form_submit_button("Enviar respuestas")
+
+    if submitted:
+        for i, q in enumerate(questions):
+            if q["options"].index(user_answers[i]) == q["answer"]:
+                score += 1
+
+        st.success(f"Tu puntaje es {score}/10")
+
+        if score == 10:
+            st.balloons()
+            st.markdown("🎉 ¡Excelente! ¡Has obtenido el puntaje perfecto! 🎉")
+            st.markdown("#### Celebración con TARDIS 🚀")
+            tardis_url = "https://upload.wikimedia.org/wikipedia/commons/4/4e/TARDIS_Prop.jpg"
+            cols = st.columns(5)
+            for _ in range(3):
+                for col in cols:
+                    with col:
+                        st.image(tardis_url, width=80)

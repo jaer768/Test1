@@ -1,5 +1,4 @@
 import streamlit as st
-import random
 
 # Configuración de página
 st.set_page_config(page_title="Evo-Devo", layout="wide", page_icon="🧬")
@@ -19,14 +18,14 @@ st.markdown("""
 3. Hall, B.K. (1992). *Evolutionary Developmental Biology*. Springer.
 """)
 
-# Imagen ilustrativa
+# Imagen ilustrativa corregida
 st.image(
-    "https://upload.wikimedia.org/wikipedia/commons/0/02/Hox_gene_expression_patterns.png",
-    caption="Genes Hox y su expresión en diferentes organismos",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Hox_gene_expression_patterns_mouse.jpg/800px-Hox_gene_expression_patterns_mouse.jpg",
+    caption="Expresión de genes Hox en el embrión del ratón",
     use_container_width=True
 )
 
-# Sección multimedia con pestañas
+# Sección multimedia con pestañas y videos funcionales
 st.header("🎬 Recursos Multimedia sobre Evo-Devo")
 
 tab1, tab2, tab3 = st.tabs(["📘 Introducción", "🌍 Documental", "🌀 Animación"])
@@ -36,12 +35,12 @@ with tab1:
     st.video("https://www.youtube.com/watch?v=5MfSYnItYvg")
 
 with tab2:
-    st.subheader("🌍 Documental educativo (Evo-Devo)")
-    st.video("https://www.youtube.com/watch?v=DRBfdUjY9hE")  # Documental corto (Stated Clearly)
+    st.subheader("🌍 Documental educativo")
+    st.video("https://www.youtube.com/watch?v=1Fi3bqxmB4Y")
 
 with tab3:
-    st.subheader("🌀 Animación: Cambios en el desarrollo")
-    st.video("https://www.youtube.com/watch?v=fdSBPpT3bBQ")  # Animación de desarrollo embriológico
+    st.subheader("🌀 Animación sobre desarrollo embrionario")
+    st.video("https://www.youtube.com/watch?v=DoSRu15NINE")
 
 # Cuestionario
 st.header("📝 Cuestionario Evo-Devo")
@@ -171,7 +170,7 @@ with st.form("quiz_form"):
             st.markdown("#### Celebración con TARDIS 🚀")
             tardis_url = "https://upload.wikimedia.org/wikipedia/commons/4/4e/TARDIS_Prop.jpg"
             cols = st.columns(5)
-            for _ in range(3):  # mostrar múltiples filas de TARDIS
+            for _ in range(3):
                 for col in cols:
                     with col:
                         st.image(tardis_url, width=80)

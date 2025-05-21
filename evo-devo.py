@@ -158,10 +158,3 @@ with st.form("quiz_form"):
         if score == 10:
             st.balloons()
             st.markdown("🎉 ¡Excelente! ¡Has obtenido el puntaje perfecto! 🎉")
-            st.markdown("#### Celebración con TARDIS 🚀")
-            tardis_url = "https://vignette.wikia.nocookie.net/doctorwho/images/4/43/TARDIS_01.png"
-            cols = st.columns(5)
-            for _ in range(3):
-                for col in cols:
-                    with col:
-                        st.image(tardis_url, width=80)

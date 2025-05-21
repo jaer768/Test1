@@ -159,4 +159,9 @@ with st.form("quiz_form"):
             st.balloons()
             st.markdown("🎉 ¡Excelente! ¡Has obtenido el puntaje perfecto! 🎉")
             st.markdown("#### Celebración con TARDIS 🚀")
-            tardis_url = "_
+            tardis_url = "https://upload.wikimedia.org/wikipedia/commons/4/4e/TARDIS_Prop.jpg"
+            cols = st.columns(5)
+            for _ in range(3):
+                for col in cols:
+                    with col:
+                        st.image(tardis_url, width=80)

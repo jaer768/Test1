@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="Aprende Python", page_icon="🐍")
 st.title("🐍 Aprende Python: while, for, if")
 
-st.markdown("""
+st.markdown(""")
 ## Introducción a Python
 
 Aquí aprenderás cómo funcionan las estructuras de control básicas en Python: `while`, `for` e `if`.

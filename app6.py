@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 # Configuración de página
 st.set_page_config(page_title="Evo-Devo", layout="wide", page_icon="🧬")
@@ -25,22 +26,31 @@ st.image(
     use_container_width=True
 )
 
-# Sección multimedia con pestañas y videos funcionales
+# Función para insertar video YouTube con embed HTML (respetando ratio)
+def embed_youtube(video_id, height=315):
+    html_code = f"""
+    <iframe width="100%" height="{height}" src="https://www.youtube.com/embed/{video_id}" 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    """
+    components.html(html_code, height=height + 20)
+
+# Sección multimedia con pestañas y embed HTML para videos
 st.header("🎬 Recursos Multimedia sobre Evo-Devo")
 
 tab1, tab2, tab3 = st.tabs(["📘 Introducción", "🌍 Documental", "🌀 Animación"])
 
 with tab1:
     st.subheader("📘 ¿Qué es la biología evolutiva del desarrollo?")
-    st.video("https://www.youtube.com/watch?v=5MfSYnItYvg")
+    embed_youtube("5MfSYnItYvg")  # Video "What is Evo-Devo?"
 
 with tab2:
     st.subheader("🌍 Documental educativo")
-    st.video("https://www.youtube.com/watch?v=1Fi3bqxmB4Y")
+    embed_youtube("jMMxIVSzz24")  # NOVA corto y funciona embebido
 
 with tab3:
     st.subheader("🌀 Animación sobre desarrollo embrionario")
-    st.video("https://www.youtube.com/watch?v=DoSRu15NINE")
+    embed_youtube("i3YCrG4FEQc")  # Animación embriogénesis
 
 # Cuestionario
 st.header("📝 Cuestionario Evo-Devo")
